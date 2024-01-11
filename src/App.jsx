@@ -1,10 +1,10 @@
 import { Fragment, useState } from "react";
-import NoControlado from "./components/NoControlado";
+import Controlado from "./components/Controlado";
 
 const App = () => {
     return (
         <div className="container">
-            <NoControlado/>
+            <Controlado/>
         </div>
     )
 }
