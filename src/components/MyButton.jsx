@@ -1,6 +1,6 @@
-const MyButton = () => {
+const MyButton = ({click}) => {
     return (
-        <button className="btn btn-success">New Button</button>
+        <button onClick={click} className="btn btn-success">status</button>
     )
 }
 

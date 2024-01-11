@@ -1,5 +1,4 @@
-import { Fragment } from "react";
-import MyButton from "./components/MyButton";
+import { Fragment, useState } from "react";
 import StateUser from "./components/StateUser";
 import imgUno from './assets/react.svg'
 
@@ -14,19 +13,18 @@ const App = () => {
     const title = "Hola soy React" /* iterpolacion */
     const classTitle = 'text-center'
     const widthImg = 'ancho'
-    const users = [
+    const [users, setUser] = useState([
         {name:'Jesus Alvarez', state:true},
         {name: 'Gerson Calvo', state:false},
         {name: 'Lisandro Pacheco', state: true}
-    ]
+    ])
     /* const pathImg = "src/assets/react.svg" */
 
     return (
         <Fragment>
             <h1 className={classTitle}>{title.toLocaleUpperCase()}</h1>
             <img src={imgUno} className={widthImg} alt={`imagen-${title}`}/>
-            <MyButton/>
-            <StateUser users={users}/>
+            <StateUser users={users} setUser={setUser}/>
         </Fragment>
     )
 }
