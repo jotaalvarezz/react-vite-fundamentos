@@ -1,13 +1,6 @@
 import { useState } from "react";
 
-const Controlado = () => {
-    // declaracion de useState por separado
-
-    /* const [title, setTitle] = useState("");
-    const [description, setDescription] = useState("");
-    const [state, setState] = useState(""); */
-
-    //declaracion de useState  como objeto para no declarar muchas variables
+const Formulario = () => {
     const [test, setTest] = useState({
         title: "",
         description: "",
@@ -77,4 +70,4 @@ const Controlado = () => {
     )
 }
 
-export default Controlado;
+export default Formulario;
