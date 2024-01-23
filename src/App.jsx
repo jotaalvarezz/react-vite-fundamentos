@@ -4,18 +4,21 @@ import Films from "./components/Films";
 
 const registers = [
     {
+        id:1,
         title: "Moby Dick",
         description: "Ballena",
         state: "Disponible",
         testing: true
     },
     {
+        id:2,
         title: "Benjamin Buttom",
         description: "Niño Viejo",
         state: "No Disponible",
         testing: true
     },
     {
+        id:3,
         title: "Avengers",
         description: "Iniciativa Vengadores",
         state: "Disponible",
