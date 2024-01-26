@@ -32,7 +32,7 @@ const App = () => {
 
     return (
         <div className="container">
-            <Formulario/>
+            <Formulario films={films} setFilm={setFilm}/>
             <Films films={films}/>
         </div>
     )

@@ -1,6 +1,8 @@
 import { useState } from "react";
+import Swal from "sweetalert2";
 
-const Formulario = () => {
+
+const Formulario = ({films, setFilm}) => {
     const [test, setTest] = useState({
         title: "",
         description: "",
@@ -9,15 +11,40 @@ const Formulario = () => {
     })
 
     const {title, description, state, testing} = test
-
     const handleSubmit = (event) => {
         event.preventDefault();
-        console.log(title, description, state, testing)
+
+        if(!title.trim() || !description.trim() || !state.trim()){
+            Swal.fire({
+                title: "Error!",
+                text: "Título y descripción son obligatorios",
+                icon: "error",
+                confirmButtonColor: "#1b955c99",
+            });
+            return;
+        }
+
+        setFilm(
+            [...films,
+                {   
+                    id: Date.now(),
+                    ...test,
+                    state: test.state == 1 ? 'Disponible':'No Disponible'
+                }
+            ]
+        )
+
+        Swal.fire({
+            position: "top-end",
+            icon: "success",
+            title: "Pelicula agregada!",
+            showConfirmButton: false,
+            timer: 1500
+        });
     }
 
     const handleChange = (e) => {
         const {name, type, checked, value} = e.target
-
         setTest({
             ...test,
             [name]: type === "checkbox" ? 
@@ -50,7 +77,7 @@ const Formulario = () => {
                             onChange={handleChange}
                             id="flexCheckDefault" />
                         <label className="form-check-label">
-                            Morning
+                            Cartelera
                         </label>
                     </div>
                     <select className="form-select"
@@ -58,12 +85,10 @@ const Formulario = () => {
                         name="state"
                         aria-label="Seleccione algo"
                     >
-                        <option value={1}>uno</option>
-                        <option value={2}>dos</option>
-                        <option value={3}>tres</option>
-                        <option value={4}>cuatro</option>
+                        <option value={1}>Disponible</option>
+                        <option value={2}>No Disponible</option>
                     </select>
-                    <button className="btn btn-success mt-2" type="submit">Procesar</button>
+                    <button className="btn btn-success mt-2" type="submit">Agregar</button>
                 </form>
             </div>
         </div>
