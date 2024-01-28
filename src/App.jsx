@@ -33,7 +33,7 @@ const App = () => {
     return (
         <div className="container">
             <Formulario films={films} setFilm={setFilm}/>
-            <Films films={films}/>
+            <Films films={films} setFilm={setFilm}/>
         </div>
     )
 }
