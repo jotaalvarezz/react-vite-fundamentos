@@ -6,7 +6,7 @@ const Film = ({film, deleteFilm}) => {
                     <h6>{film.title}</h6>
                     <p>{film.description}</p>
                     <div className="d-flex gap-2">
-                        <button className="btn btn-outline-danger" onClick={deleteFilm(film.id)}>Eliminar</button>
+                        <button className="btn btn-outline-danger" onClick={deleteFilm}>Eliminar</button>
                         <button className="btn btn-outline-warning">Editar</button>
                     </div>
                 </div>

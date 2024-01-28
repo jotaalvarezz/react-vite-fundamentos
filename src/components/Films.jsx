@@ -1,7 +1,7 @@
 import Film from "./Film";
 
 const Films = ({films, setFilm}) => {
-    console.log("itemm ",films)
+    /* console.log("itemm ",films) */
 
     const DeleteFilm = (id) => {
         let item = films.find((prev) => {
@@ -17,7 +17,7 @@ const Films = ({films, setFilm}) => {
             <ul className="list-group">
             {
                 films.map((item, index) => (
-                    <Film key={index} film={item} deleteFilm={DeleteFilm}/>
+                    <Film key={index} film={item} deleteFilm={DeleteFilm(item.id)}/>
                 ))
             }
             </ul>
