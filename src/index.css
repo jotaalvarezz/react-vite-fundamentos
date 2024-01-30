@@ -1,7 +1,3 @@
-.text-center {
-    text-align: center;
-}
-
-.ancho {
-    width: 50%;
-}
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
