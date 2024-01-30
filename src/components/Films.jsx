@@ -36,6 +36,12 @@ const Films = ({films, setFilm}) => {
                     />
                 ))
             }
+            {
+                films.length === 0 && 
+                <li className="list-group-item list-group-item-primary text-center">
+                    No hay peliculas en cartelera
+                </li>
+            }
             </ul>
         </>
     )

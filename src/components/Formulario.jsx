@@ -45,7 +45,6 @@ const Formulario = ({films, setFilm}) => {
 
     const handleChange = (e) => {
         const {name, type, checked, value} = e.target
-        console.log("select ", name, value)
         setTest({
             ...test,
             [name]: type === "checkbox" ? 

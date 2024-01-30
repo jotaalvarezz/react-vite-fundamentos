@@ -1,8 +1,8 @@
-import { Fragment, useState } from "react";
+import { Fragment, useEffect, useState } from "react";
 import Formulario from "./components/Formulario";
 import Films from "./components/Films";
 
-const registers = [
+const registers = JSON.parse(localStorage.getItem('peliculas')) || [
     {
         id:1,
         title: "Moby Dick",
@@ -29,6 +29,10 @@ const registers = [
 const App = () => {
 
     const [films, setFilm] = useState(registers)
+
+    useEffect(() => {
+        localStorage.setItem('peliculas',JSON.stringify(films))
+    },[films])
 
     return (
         <div className="container">
