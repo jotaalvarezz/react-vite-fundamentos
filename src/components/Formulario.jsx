@@ -45,6 +45,7 @@ const Formulario = ({films, setFilm}) => {
 
     const handleChange = (e) => {
         const {name, type, checked, value} = e.target
+        console.log("select ", name, value)
         setTest({
             ...test,
             [name]: type === "checkbox" ? 
@@ -83,8 +84,9 @@ const Formulario = ({films, setFilm}) => {
                     <select className="form-select"
                         onChange={handleChange}
                         name="state"
-                        aria-label="Seleccione algo"
+                        aria-label="Seleccione una opcion"
                     >
+                        <option selected>Seleccione una opcion</option>
                         <option value={1}>Disponible</option>
                         <option value={2}>No Disponible</option>
                     </select>

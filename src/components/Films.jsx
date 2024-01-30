@@ -12,16 +12,22 @@ const Films = ({films, setFilm}) => {
     }
 
     const UpdateFilm = (item) => {
-        console.log("item ", item)
-        const film = films.find(prev => prev.id == item.id)
-        
+        const index = films.findIndex(prev => prev.id == item.id)
+        const array = [...films]
+        array[index] = {
+            ...item,
+            state: item.state === 'Disponible' ? 'No Disponible': 'Disponible'
+        }
+        setFilm(
+            array
+        )
     }
 
     return (
         <>
             <h2 className="text-center mt-4">Peliculas</h2>
             <ul className="list-group">
-            {
+            { 
                 films.map((item, index) => (
                     <Film key={index} 
                         film={item} 
