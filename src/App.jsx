@@ -1,3 +1,5 @@
+import Header from "./components/Header";
+
 const App = () => {
     return (
         <div
@@ -7,13 +9,8 @@ const App = () => {
             bg-contain
             bg-no-repeat"
         >
-            <header className="container mx-auto px-4 ">
-                <div className="flex justify-between">
-                    <h1 className="pt-8 text-3xl font-bold uppercase tracking-[0.2em] text-white">
-                        CinePlus Word
-                    </h1>
-                    <button>Luna</button>
-                </div>
+            <Header />
+            <main className="container mx-auto px-4">
                 <form className="my-8 flex items-center gap-4 overflow-hidden rounded-md bg-white px-4 py-3">
                     <span className="inline-block h-5 w-5 rounded-full border-2"></span>
                     <input
@@ -22,43 +19,66 @@ const App = () => {
                         placeholder="Agregar nuevas peliculas..."
                     />
                 </form>
-            </header>
+                <div className="rounded-t-md bg-white">
+                    <article className="flex gap-4 border-b border-b-gray-300 px-4 py-4">
+                        <button className="inline-block h-5 w-5 flex-none rounded-full border-2"></button>
+                        <p className="flex-grow text-gray-600">
+                            Complete online curse in bluuweb
+                        </p>
+                        <img
+                            className="h-5 flex-none"
+                            src="src/assets/images/icon-cross.svg"
+                        />
+                    </article>
+                    <article className="flex gap-4 border-b border-b-gray-300 px-4 py-4">
+                        <button className="inline-block h-5 w-5 flex-none rounded-full border-2"></button>
+                        <p className="flex-grow text-gray-600">
+                            Complete online curse in bluuweb
+                        </p>
+                        <img
+                            className="h-5 flex-none"
+                            src="src/assets/images/icon-cross.svg"
+                        />
+                    </article>
+                    <article className="flex gap-4 border-b border-b-gray-300 px-4 py-4">
+                        <button className="inline-block h-5 w-5 flex-none rounded-full border-2"></button>
+                        <p className="flex-grow text-gray-600">
+                            Complete online curse in bluuweb
+                        </p>
+                        <img
+                            className="h-5 flex-none"
+                            src="src/assets/images/icon-cross.svg"
+                        />
+                    </article>
+                    <article className="flex gap-4 border-b border-b-gray-300 px-4 py-4">
+                        <button className="inline-block h-5 w-5 flex-none rounded-full border-2"></button>
+                        <p className="flex-grow text-gray-600">
+                            Complete online curse in bluuweb
+                        </p>
+                        <img
+                            className="h-5 flex-none"
+                            src="src/assets/images/icon-cross.svg"
+                        />
+                    </article>
+                </div>
 
-            <main className="container mx-auto px-4">
-                <article>
-                    <button>circulo</button>
-                    <p>Cpmplete online curse in bluuweb</p>
-                    <button>equis</button>
-                </article>
-                <article>
-                    <button>circulo</button>
-                    <p>Cpmplete online curse in bluuweb</p>
-                    <button>equis</button>
-                </article>
-                <article>
-                    <button>circulo</button>
-                    <p>Cpmplete online curse in bluuweb</p>
-                    <button>equis</button>
-                </article>
-                <article>
-                    <button>circulo</button>
-                    <p>Cpmplete online curse in bluuweb</p>
-                    <button>equis</button>
-                </article>
+                <section className="flex justify-between rounded-b-md bg-white px-4 py-4">
+                    <button className="text-gray-400">5 Items Left</button>
+                    <button className="text-gray-400">Clear Complete</button>
+                </section>
 
-                <section>
-                    <span>5 items left</span>
-                    <button>Clear Completed</button>
+                <section className="container mx-auto mt-8 px-4">
+                    <div className="flex justify-center gap-4 rounded-md bg-white py-4">
+                        <button className="text-blue-600">All</button>
+                        <button className="hover:text-blue-600">Active</button>
+                        <button className="hover:text-blue-600">
+                            Completed
+                        </button>
+                    </div>
                 </section>
             </main>
 
-            <section className="container mx-auto px-4">
-                <button>All</button>
-                <button>Active</button>
-                <button>Completed</button>
-            </section>
-
-            <p className="text-center">Drag and Drop</p>
+            <p className="mt-14 text-center">Drag and Drop to reorder list</p>
         </div>
     );
 };
