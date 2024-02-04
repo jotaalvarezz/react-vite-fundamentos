@@ -26,8 +26,8 @@ const App = () => {
             <Header />
             <main className="container mx-auto px-4">
                 <FilmCreate films={films} setFilm={setFilm}/>
-                <ListFilms films={films}/>
-                <InfoFilms />
+                <ListFilms films={films} setFilm={setFilm}/>
+                <InfoFilms films={films}/>
                 <FilterFilms />
             </main>
 

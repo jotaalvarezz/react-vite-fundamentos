@@ -1,13 +1,19 @@
 import ItemFilm from "./itemFillms/ItemFilm";
 
-const ListFilms = ({films}) => {
-    console.log("list ", films)
+const ListFilms = ({films, setFilm}) => {
+    const handleDelete = (item) => {
+        const array = films.filter(prev => (prev.id != item.id))
+        
+        setFilm([
+            ...array
+        ])
+    }
 
     return (
         <div className="rounded-t-md bg-white">
             {
                 films.map((item, index) => (
-                    <ItemFilm key={index} film={item}/>
+                    <ItemFilm key={index} film={item} deleteFilm={() => handleDelete(item)}/>
                 ))
             }
             {
