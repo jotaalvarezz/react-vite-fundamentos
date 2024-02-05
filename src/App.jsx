@@ -7,13 +7,13 @@ import InfoFilms from "./components/InfoFilms";
 import ListFilms from "./components/ListFilms";
 
 const api = [
-    {id:1, name:'Moby Dick', state: false},
-    {id:2, name:'El Curiso caso de Benjamin Bootons', state: true},
-    {id:3, name:'Van Hellsing', state: true}
-]
+    { id: 1, name: "Moby Dick", state: false },
+    { id: 2, name: "El Curiso caso de Benjamin Bootons", state: true },
+    { id: 3, name: "Van Hellsing", state: true },
+];
 
 const App = () => {
-    const [films, setFilm] = useState(api)
+    const [films, setFilm] = useState(api);
 
     return (
         <div
@@ -25,15 +25,12 @@ const App = () => {
         >
             <Header />
             <main className="container mx-auto px-4">
-                <FilmCreate films={films} setFilm={setFilm}/>
-                <ListFilms films={films} setFilm={setFilm}/>
-                <InfoFilms films={films}/>
+                <FilmCreate films={films} setFilm={setFilm} />
+                <ListFilms films={films} setFilm={setFilm} />
+                <InfoFilms films={films} />
                 <FilterFilms />
             </main>
-
-            <footer>
-                <Footer/>
-            </footer>
+            <Footer />
         </div>
     );
 };

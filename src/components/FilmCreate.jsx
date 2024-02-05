@@ -17,15 +17,21 @@ const FilmCreate = ({ films, setFilm }) => {
 
     const handleKeyPress = (event) => {
         event.preventDefault();
-        console.log("film ", film);
-        setFilm([
-            ...films,
-            {
-                id: Date.now(),
-                ...film,
-                state: true,
-            },
-        ]);
+
+        if (film.name.trim()) {
+            setFilm([
+                ...films,
+                {
+                    id: Date.now(),
+                    ...film,
+                    state: true,
+                },
+            ]);
+
+            setFilme({ name: "" });
+        }
+
+        setFilme({ name: "" });
     };
 
     return (
@@ -39,6 +45,7 @@ const FilmCreate = ({ films, setFilm }) => {
                 type="text"
                 name="name"
                 placeholder="Agregar nuevas peliculas..."
+                value={film.name}
                 onChange={handleChange}
             />
         </form>
