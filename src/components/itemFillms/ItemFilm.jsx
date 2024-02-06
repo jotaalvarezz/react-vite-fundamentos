@@ -13,7 +13,12 @@ const ItemFilm = ({ film, deleteFilm, updateFilm }) => {
                 className={`${film.state ? check : nocheck}`}
                 onClick={updateFilm}
             >
-                <img className="px-1" src="src/assets/images/icon-check.svg" />
+                {film.state && (
+                    <img
+                        className="px-1"
+                        src="src/assets/images/icon-check.svg"
+                    />
+                )}
             </button>
             <p className="flex-grow text-gray-600">{film.name}</p>
             <img

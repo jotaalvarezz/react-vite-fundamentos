@@ -1,9 +1,28 @@
-const FilterFilms = () => {
+const FilterFilms = ({ filter, setFilter }) => {
+    const handleChange = (filter) => {
+        setFilter(filter);
+    };
+
     return (
         <section className="container mx-auto mt-8 flex justify-center gap-4 rounded-md bg-white px-4 py-4">
-            <button className="text-blue-600">All</button>
-            <button className="hover:text-blue-600">Active</button>
-            <button className="hover:text-blue-600">Completed</button>
+            <button
+                className={`hover:text-blue-600 ${filter === "all" && "text-blue-600"}`}
+                onClick={() => handleChange("all")}
+            >
+                All
+            </button>
+            <button
+                className={`hover:text-blue-600 ${filter === "active" && "text-blue-600"}`}
+                onClick={() => handleChange("active")}
+            >
+                Active
+            </button>
+            <button
+                className={`hover:text-blue-600 ${filter === "completed" && "text-blue-600"}`}
+                onClick={() => handleChange("completed")}
+            >
+                Completed
+            </button>
         </section>
     );
 };
