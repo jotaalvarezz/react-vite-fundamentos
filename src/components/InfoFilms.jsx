@@ -18,10 +18,12 @@ const InfoFilms = ({ films, setFilm }) => {
     };
 
     return (
-        <section className="flex justify-between rounded-b-md bg-white px-4 py-4">
-            <button className="text-gray-400">{films.length} Items Left</button>
+        <section className="flex justify-between rounded-b-md bg-gray-50 px-4 px-4 py-4 dark:bg-gray-800">
+            <button className="text-gray-400 dark:text-gray-300">
+                {films.length} Items Left
+            </button>
             <button
-                className="text-gray-400 hover:text-blue-600"
+                className="text-gray-400 hover:text-blue-600 dark:text-gray-300"
                 onClick={clearAll}
             >
                 Clear Complete

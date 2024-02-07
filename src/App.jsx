@@ -32,11 +32,16 @@ const App = () => {
 
     return (
         <div
-            className="min-h-screen
-            bg-gray-200 
+            className="
+            dark: 
+            min-h-screen
+            bg-gray-200
             bg-[url('./assets/images/bg-mobile-light.jpg')]
             bg-contain
-            bg-no-repeat"
+            bg-no-repeat
+            transition-all
+            duration-1000
+            dark:bg-gray-900"
         >
             <Header />
             <main className="container mx-auto px-4">

@@ -8,7 +8,7 @@ const ItemFilm = ({ film, deleteFilm, updateFilm }) => {
     const nocheck = `inline-block h-5 w-5 flex-none rounded-full border-2`;
 
     return (
-        <article className="flex gap-4 border-b border-b-gray-300 px-4 py-4">
+        <article className="flex gap-4 border-b border-b-gray-300 px-4 py-4 dark:bg-gray-800">
             <button
                 className={`${film.state ? check : nocheck}`}
                 onClick={updateFilm}
@@ -20,7 +20,9 @@ const ItemFilm = ({ film, deleteFilm, updateFilm }) => {
                     />
                 )}
             </button>
-            <p className="flex-grow text-gray-600">{film.name}</p>
+            <p className="flex-grow text-gray-600 dark:text-gray-300">
+                {film.name}
+            </p>
             <img
                 className="h-5 flex-none cursor-pointer"
                 src="src/assets/images/icon-cross.svg"

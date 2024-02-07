@@ -37,11 +37,15 @@ const FilmCreate = ({ films, setFilm }) => {
     return (
         <form
             onSubmit={handleKeyPress}
-            className="my-8 flex items-center gap-4 overflow-hidden rounded-md bg-white px-4 py-3"
+            className="my-8 flex items-center gap-4 overflow-hidden 
+            rounded-md 
+            bg-gray-50 px-4
+            py-3
+            dark:bg-gray-800"
         >
             <span className="inline-block h-5 w-5 rounded-full border-2"></span>
             <input
-                className="w-full text-gray-400 outline-none"
+                className="w-full text-gray-400 outline-none dark:bg-gray-800"
                 type="text"
                 name="name"
                 placeholder="Agregar nuevas peliculas..."

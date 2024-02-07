@@ -4,7 +4,12 @@ const FilterFilms = ({ filter, setFilter }) => {
     };
 
     return (
-        <section className="container mx-auto mt-8 flex justify-center gap-4 rounded-md bg-white px-4 py-4">
+        <section
+            className="container mx-auto mt-8 flex 
+        justify-center gap-4 rounded-md bg-gray-50 px-4 
+        py-4
+        dark:bg-gray-800 dark:text-gray-300"
+        >
             <button
                 className={`hover:text-blue-600 ${filter === "all" && "text-blue-600"}`}
                 onClick={() => handleChange("all")}

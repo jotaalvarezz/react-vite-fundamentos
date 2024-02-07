@@ -1,4 +1,22 @@
+import { useEffect, useState } from "react";
+
+const saveDarkMode = localStorage.getItem("theme") == "dark";
+
 const Header = () => {
+    const sun = "icon-sun.svg";
+    const moon = "icon-moon.svg";
+    const [icon, setIcon] = useState(saveDarkMode);
+
+    useEffect(() => {
+        if (icon) {
+            document.documentElement.classList.add("dark");
+            localStorage.setItem("theme", "dark");
+        } else {
+            document.documentElement.classList.remove("dark");
+            localStorage.setItem("theme", "light");
+        }
+    }, [icon]);
+
     return (
         <header className="container mx-auto px-4 ">
             <div className="flex justify-between">
@@ -6,8 +24,9 @@ const Header = () => {
                     CinePlus Word
                 </h1>
                 <img
-                    className="mt-8 h-7 w-7"
-                    src="src/assets/images/icon-moon.svg"
+                    className="mt-8 h-7 w-7 cursor-pointer"
+                    src={`src/assets/images/${icon ? sun : moon}`}
+                    onClick={() => setIcon(!icon)}
                 />
             </div>
         </header>
