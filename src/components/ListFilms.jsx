@@ -21,9 +21,11 @@ const ListFilms = ({ films, setFilm }) => {
     return (
         <Droppable droppableId={"x"}>
             {(provided) => (
-                <div ref={provided.innerRef} 
+                <div
+                    ref={provided.innerRef}
                     {...provided.droppableProps}
-                className="overflow-hidden rounded-t-md bg-white">
+                    className="overflow-hidden rounded-t-md bg-gray-50 dark:bg-gray-800"
+                >
                     {films.map((item, index) => (
                         <ItemFilm
                             index={index}
