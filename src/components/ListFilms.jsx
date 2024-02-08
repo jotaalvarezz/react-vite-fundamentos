@@ -1,4 +1,5 @@
 import ItemFilm from "./itemFillms/ItemFilm";
+import { Droppable, Draggable } from "@hello-pangea/dnd";
 
 const ListFilms = ({ films, setFilm }) => {
     const handleDelete = (item) => {
@@ -18,21 +19,29 @@ const ListFilms = ({ films, setFilm }) => {
     };
 
     return (
-        <div className="rounded-t-md overflow-hidden bg-white">
-            {films.map((item, index) => (
-                <ItemFilm
-                    key={index}
-                    film={item}
-                    deleteFilm={() => handleDelete(item)}
-                    updateFilm={() => handleCheck(item)}
-                />
-            ))}
-            {films.length === 0 && (
-                <p className="py-8 text-center text-gray-400">
-                    no hay peliculas en catelera
-                </p>
+        <Droppable droppableId={"x"}>
+            {(provided) => (
+                <div ref={provided.innerRef} 
+                    {...provided.droppableProps}
+                className="overflow-hidden rounded-t-md bg-white">
+                    {films.map((item, index) => (
+                        <ItemFilm
+                            index={index}
+                            key={index}
+                            film={item}
+                            deleteFilm={() => handleDelete(item)}
+                            updateFilm={() => handleCheck(item)}
+                        />
+                    ))}
+                    {provided.placeholder}
+                    {films.length === 0 && (
+                        <p className="py-8 text-center text-gray-400 dark:bg-gray-800">
+                            no hay peliculas en catelera
+                        </p>
+                    )}
+                </div>
             )}
-        </div>
+        </Droppable>
     );
 };
 
