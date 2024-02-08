@@ -5,7 +5,7 @@ import Footer from "./components/Footer";
 import Header from "./components/Header";
 import InfoFilms from "./components/InfoFilms";
 import ListFilms from "./components/ListFilms";
-import { DragDropContext} from "@hello-pangea/dnd";
+import { DragDropContext } from "@hello-pangea/dnd";
 
 const api = JSON.parse(localStorage.getItem("films")) || [];
 
@@ -17,13 +17,14 @@ const App = () => {
     }, [films]);
 
     const handleDragEnd = (result) => {
-        const destination = result.destination.index
-        const source = result.source.index
-        const copyFilms = [...films]
-        const [array] = copyFilms.splice(source,1)
-        copyFilms.splice(destination, 0 , array)
-        setFilm(copyFilms)
-    }
+        if (!result.destination) return;
+        const destination = result.destination.index;
+        const source = result.source.index;
+        const copyFilms = [...films];
+        const [array] = copyFilms.splice(source, 1);
+        copyFilms.splice(destination, 0, array);
+        setFilm(copyFilms);
+    };
 
     const List = () => {
         switch (filter) {
