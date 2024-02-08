@@ -45,7 +45,7 @@ const FilmCreate = ({ films, setFilm }) => {
         >
             <span className="inline-block h-5 w-5 rounded-full border-2"></span>
             <input
-                className="w-full text-gray-400 outline-none dark:bg-gray-800"
+                className="w-full bg-gray-50 text-gray-400 outline-none dark:bg-gray-800"
                 type="text"
                 name="name"
                 placeholder="Agregar nuevas peliculas..."

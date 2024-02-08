@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import FilmCreate from "./components/FilmCreate";
 import FilterFilms from "./components/FilterFilms";
 import Footer from "./components/Footer";
@@ -7,16 +7,14 @@ import InfoFilms from "./components/InfoFilms";
 import ListFilms from "./components/ListFilms";
 import Swal from "sweetalert2";
 
-const api = [
-    { id: 1, name: "Moby Dick", state: false },
-    { id: 2, name: "El Curiso caso de Benjamin Bootons", state: true },
-    { id: 3, name: "Van Hellsing", state: true },
-];
+const api = JSON.parse(localStorage.getItem('films')) || [] ;
 
 const App = () => {
     const [films, setFilm] = useState(api);
     const [filter, setFilter] = useState("all");
-
+    useEffect(() => {
+        localStorage.setItem('films', JSON.stringify(films))
+    },[films])
     const List = () => {
         switch (filter) {
             case "all":
@@ -37,14 +35,16 @@ const App = () => {
             min-h-screen
             bg-gray-200
             bg-[url('./assets/images/bg-mobile-light.jpg')]
+            md:bg-[url('./assets/images/bg-desktop-light.jpg')]
+            md:dark:bg-[url('./assets/images/bg-desktop-dark.jpg')]
             bg-contain
             bg-no-repeat
             transition-all
             duration-1000
             dark:bg-gray-900"
         >
-            <Header />
-            <main className="container mx-auto px-4">
+            <Header/>
+            <main className="container mx-auto px-4 max-w-lg">
                 <FilmCreate films={films} setFilm={setFilm} />
                 <ListFilms films={List()} setFilm={setFilm} />
                 <InfoFilms films={films} setFilm={setFilm} />

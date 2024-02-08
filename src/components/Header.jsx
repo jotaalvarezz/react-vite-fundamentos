@@ -18,7 +18,7 @@ const Header = () => {
     }, [icon]);
 
     return (
-        <header className="container mx-auto px-4 ">
+        <header className="container mx-auto px-4 md:max-w-lg">
             <div className="flex justify-between">
                 <h1 className="pt-8 text-3xl font-bold uppercase tracking-[0.2em] text-white">
                     CinePlus Word

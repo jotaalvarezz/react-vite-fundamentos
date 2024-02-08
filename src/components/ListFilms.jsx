@@ -18,7 +18,7 @@ const ListFilms = ({ films, setFilm }) => {
     };
 
     return (
-        <div className="rounded-t-md bg-white">
+        <div className="rounded-t-md overflow-hidden bg-white">
             {films.map((item, index) => (
                 <ItemFilm
                     key={index}
