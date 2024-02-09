@@ -1,32 +1,30 @@
-import { Fragment, useState } from "react";
-import StateUser from "./components/StateUser";
-import imgUno from './assets/react.svg'
-
-/* const MyButton = () => {
-    return (
-        <button className="btn btn-success">New Button</button>
-    )
-} */
+import { Fragment, useEffect, useState } from "react";
 
 const App = () => {
+  const [counter, setCounter] = useState(0);
+  const [api, setApi] = useState([]);
 
-    const title = "Hola soy React" /* iterpolacion */
-    const classTitle = 'text-center'
-    const widthImg = 'ancho'
-    const [users, setUser] = useState([
-        {name:'Jesus Alvarez', state:true},
-        {name: 'Gerson Calvo', state:false},
-        {name: 'Lisandro Pacheco', state: true}
-    ])
-    /* const pathImg = "src/assets/react.svg" */
+  const peticion = async () => {
+    try {
+      const res = await fetch("https://jsonplaceholder.typicode.com/todos", {
+        method: "GET",
+      });
+      const data = await res.json();
+      console.log("data ", data);
+    } catch (error) {
+      console.log(error);
+    }
+  };
 
-    return (
-        <Fragment>
-            <h1 className={classTitle}>{title.toLocaleUpperCase()}</h1>
-            <img src={imgUno} className={widthImg} alt={`imagen-${title}`}/>
-            <StateUser users={users} setUser={setUser}/>
-        </Fragment>
-    )
-}
+  useEffect(() => {
+    peticion();
+  });
+  return (
+    <Fragment>
+      <h1>Use Effect</h1>
+      <button onClick={() => setCounter(counter + 1)}>counter:{counter}</button>
+    </Fragment>
+  );
+};
 
 export default App;
