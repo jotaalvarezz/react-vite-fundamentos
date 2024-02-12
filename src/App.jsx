@@ -4,7 +4,7 @@ const App = () => {
 
   return (
     <Fragment>
-      <h1>react router</h1>
+      <h1 className="bg-red-600 md:text-center">react router</h1>
     </Fragment>
   );
 };
