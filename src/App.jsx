@@ -1,12 +1,13 @@
-import { Fragment, useState} from "react";
+import { Fragment, useState } from "react";
 
 const App = () => {
-
-  return (
-    <Fragment>
-      <h1 className="bg-red-600 md:text-center">react router</h1>
-    </Fragment>
-  );
+    return (
+        <Fragment>
+            <div className="text-right md:text-center">
+                react router
+            </div>
+        </Fragment>
+    );
 };
 
 export default App;
